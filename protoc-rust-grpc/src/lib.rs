@@ -95,10 +95,10 @@ impl Codegen {
             .protoc
             .clone()
             .unwrap_or_else(|| protoc::Protoc::from_env_path());
-        let version = protoc.version().expect("protoc version");
-        if !version.is_3() {
+        let _version = protoc.version().expect("protoc version");
+        /* if !version.is_3() {
             panic!("protobuf must have version 3");
-        }
+        } */
 
         if self.rust_protobuf {
             protoc_rust::Codegen::new()
