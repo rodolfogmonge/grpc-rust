@@ -21,7 +21,7 @@ pub(crate) fn headers_200(metadata: Metadata) -> Headers {
         // TODO: do not allocate
         Header::new(":status", "200"),
         Header::new("content-type", "application/grpc"),
-        Header::new(HEADER_GRPC_STATUS, "0"),
+        //Header::new(HEADER_GRPC_STATUS, "0"),
     ]);
     headers.extend(metadata.into_headers());
     headers

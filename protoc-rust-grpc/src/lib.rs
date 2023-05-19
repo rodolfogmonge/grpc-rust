@@ -3,6 +3,7 @@
 #![deny(broken_intra_doc_links)]
 #![deny(missing_docs)]
 
+use protobuf::Message;
 use protoc::Protoc;
 use protoc_rust::Customize;
 use std::fs;
@@ -137,7 +138,7 @@ impl Codegen {
         drop(file);
         drop(temp_dir);
 
-        let fds: protobuf::descriptor::FileDescriptorSet = protobuf::parse_from_bytes(&fds)
+        let fds: protobuf::descriptor::FileDescriptorSet = Message::parse_from_bytes(&fds)
             .map_err(|e| io::Error::new(io::ErrorKind::Other, e))?;
 
         let mut includes = self.includes.clone();
