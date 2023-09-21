@@ -1,3 +1,5 @@
+#![allow(unused_imports)]
+
 use bytes::Buf;
 use bytes::Bytes;
 

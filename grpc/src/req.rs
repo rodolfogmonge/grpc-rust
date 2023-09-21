@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use futures::future;
 use futures::stream;
 

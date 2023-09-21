@@ -64,7 +64,7 @@ impl<Resp: Send> ServerResponseSink<Resp> {
         Ok(())
     }
 
-    pub fn pump_from<S>(self, handle: &Handle, stream: S)
+    pub fn pump_from<S>(self, _handle: &Handle, _stream: S)
     where
         S: stream::Stream<Item = crate::Result<Resp>> + Unpin + Send + 'static,
     {

@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use std::cmp;
 use std::collections::vec_deque;
 use std::collections::VecDeque;
@@ -7,7 +9,7 @@ use std::ops::Deref;
 use std::ops::DerefMut;
 
 use bytes::Buf;
-use bytes::BufMut;
+// use bytes::BufMut;
 use bytes::Bytes;
 use bytes::BytesMut;
 use httpbis::BufGetBytes;
@@ -116,7 +118,7 @@ impl<B: Buf> Buf for BufVecDeque<B> {
         }
     }
 
-    fn copy_to_bytes(&mut self, len: usize) -> Bytes {
+    fn copy_to_bytes(&mut self, _len: usize) -> Bytes {
         todo!()
         // if !self.has_remaining() {
         //     Bytes::new()

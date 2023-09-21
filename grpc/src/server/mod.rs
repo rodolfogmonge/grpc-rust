@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 pub(crate) mod method;
 pub(crate) mod req_handler;
 pub(crate) mod req_handler_unary;
@@ -14,7 +16,7 @@ use httpbis;
 
 use result::Result;
 
-use crate::common::sink::SinkCommonUntyped;
+// use crate::common::sink::SinkCommonUntyped;
 use crate::proto::grpc_status::GrpcStatus;
 use crate::proto::headers::grpc_error_message;
 use crate::result;
@@ -158,7 +160,7 @@ impl httpbis::ServerHandler for GrpcServerHandler {
         let path = req.headers.path().to_owned();
 
         // TODO: clone
-        let metadata = match Metadata::from_headers(req.headers.clone()) {
+        let _metadata = match Metadata::from_headers(req.headers.clone()) {
             Ok(metadata) => metadata,
             Err(_) => {
                 resp.send_message(grpc_error_message("decode metadata error"))?;

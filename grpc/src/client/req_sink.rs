@@ -9,7 +9,7 @@ use futures::task::Context;
 use httpbis;
 
 use futures::future;
-use httpbis::SinkAfterHeadersBox;
+// use httpbis::SinkAfterHeadersBox;
 use std::future::Future;
 use std::task::Poll;
 
